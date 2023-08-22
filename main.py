@@ -1,7 +1,7 @@
 import PySimpleGUI as sg
 import os
 
-from my_functions import check_files, create_files, MY_FILES
+from my_functions import check_files, create_files, add_html_content, MY_FILES, HTML_BOILERPLATE
 
 
 #layout
@@ -50,6 +50,9 @@ while True:
                 window['-msg-'].update('FILES ALREADY EXIST')
             else:
                 create_files(MY_FILES)
+                
+                add_html_content(HTML_BOILERPLATE)
+                
                 window['-msg-'].update(text_color = 'LightGreen')
                 window['-msg-'].update('FILES HAS BEEN CREATED')
         
